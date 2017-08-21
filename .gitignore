@@ -1,0 +1,12 @@
+# System
+.DS_Store/
+
+# IDE
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+.cache/
+.python-version
+.mypy_cache/
