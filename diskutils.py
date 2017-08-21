@@ -80,7 +80,7 @@ class LinuxDiskUtils(DiskUtils):
         result = subprocess.run(cmd.split(), stdout=subprocess.PIPE, check=True, encoding='utf_8')
         devices = json.loads(result.stdout.strip())['blockdevices']
         s_devices = sorted(devices, key=lambda k: k['model'])
-        return [Device(i, d['model'], d['name'], self._convert_size(d['size'])) for i, d in enumerate(s_devices, 0)]
+        return [Device(str(i), d['model'], d['name'], self._convert_size(d['size'])) for i, d in enumerate(s_devices, 0)]
 
     def get_device_partitions(self, device: Device) -> List[Partition]:
         cmd = f'lsblk --bytes --json --output=NAME,SIZE /dev/{device.alias}'

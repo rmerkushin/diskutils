@@ -9,6 +9,7 @@
 # Системные требования
 
 - Python 3.6+
+- mypy для unit тестов
 - Windows 7 или выше
 - Linux:
     - lsblk
