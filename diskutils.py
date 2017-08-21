@@ -95,6 +95,8 @@ def main():
         disk_utils = WindowsDiskUtils()
     elif p == 'Linux':
         disk_utils = LinuxDiskUtils()
+    else:
+        raise NotImplementedError(f'Платформа {p} не поддерживается!')
     devices = disk_utils.get_devices()
     parser = argparse.ArgumentParser('diskutils')
     parser.add_argument('index', choices=range(len(devices)), nargs='?', type=int, help='Индекс диска в системе')
